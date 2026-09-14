@@ -49,3 +49,22 @@ npm run dev
 
 GitHub 리포지토리에 푸시한 뒤 Vercel에 연결하면 됩니다.
 Next.js 프로젝트의 `package.json`이 있는 폴더를 Root Directory로 지정하세요.
+
+
+## VR 공압장갑 프로젝트 전용 상세 페이지
+
+`/works/vr-pneumatic-glove`는 일반 프로젝트 상세 템플릿 대신 별도 케이스 스터디 페이지를 사용합니다.
+
+파일:
+- `app/works/vr-pneumatic-glove/page.tsx`
+- 관련 스타일: `app/globals.css` 하단의 `VR Pneumatic Glove case-study page`
+
+명세서 기반 섹션:
+- 프로젝트 목적 / 요구 산출물
+- 시스템 아키텍처
+- UDP 장갑 API
+- 제스처 선택 및 재현
+- 물체 선택 및 그립 재현
+- YCB 대상 물체
+- 검수 기준 / 제출 증빙
+- 개발 환경

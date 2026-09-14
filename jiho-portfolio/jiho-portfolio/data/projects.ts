@@ -103,25 +103,26 @@ export const projects: Project[] = [
   {
     slug: "vr-pneumatic-glove",
     title: "VR PNEUMATIC GLOVE",
-    subtitle: "VR Interaction Prototype",
+    subtitle: "Motion Capture & Haptic Interaction",
     category: "System",
-    period: "2026.06",
-    description: "공압 장갑과 VR 환경을 연결해 손 동작 기반 상호작용을 구현하는 프로토타입입니다.",
-    summary: "하드웨어 입력과 VR 인터랙션을 결합한 실습형 프로젝트.",
-    tech: ["VR", "Sensors", "Interaction", "Prototype"],
+    period: "2026.03",
+    description: "Meta Quest 3와 Manus Quantum Metaglove를 연결하고 UDP 장갑 API로 제스처·그립을 재현하는 VR 인터랙션 프로토타입입니다.",
+    summary: "모션캡처 기반 오른손 추적과 상황별 손가락 굽힘 preset 제어를 결합한 하드웨어 연동 VR 프로젝트.",
+    tech: ["Unity", "Meta Quest 3", "Manus SDK", "UDP"],
     role: [
-      "상호작용 시나리오 정리",
-      "입력-반응 흐름 설계",
-      "작업 명세 및 테스트 항목 작성"
+      "VR 손 스켈레톤과 모션캡처 입력 연동 범위",
+      "제스처 선택 및 재현 시나리오 구현 범위",
+      "물체 선택 및 그립 재현 시나리오 구현 범위",
+      "UDP 기반 장갑 API 연동 범위"
     ],
     highlights: [
-      "장갑 입력과 가상 객체 반응 연결",
-      "사용자 동작 중심 시나리오 설계",
-      "실험 단계별 체크리스트 구성"
+      "Manus Quantum Metaglove 손 자세의 실시간 VR 반영",
+      "Grid UI 기반 제스처 preset 선택과 오른손 재현",
+      "YCB 물체 종류별 서로 다른 grip preset 적용"
     ],
-    problem: "물리 장치의 입력과 가상 환경의 반응 사이에 지연과 불일치가 발생할 수 있었습니다.",
-    solution: "입력 이벤트를 단순화하고 상호작용 단위를 분리해 단계별로 검증할 수 있도록 설계했습니다.",
-    outcome: "기능별 테스트가 가능한 프로토타입 구조를 만들었습니다.",
+    problem: "VR 인터랙션 입력과 실제 장갑 동작 명령을 하나의 흐름으로 연결하고, 제스처 및 물체 종류에 따라 서로 다른 굽힘 preset을 안정적으로 매핑해야 합니다.",
+    solution: "인터랙션 이벤트에서 preset을 선택한 뒤 timestamp와 손가락 채널별 0~1 굽힘값을 UDP API로 전달하는 구조로 정의했습니다.",
+    outcome: "명세상 각 시나리오는 연속 3회 성공, 제스처 선택 후 1초 이내 API 송신, 물체별 서로 다른 송신값 적용을 검수 기준으로 합니다.",
     accent: "VR"
   },
   {
